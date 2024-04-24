@@ -1,5 +1,5 @@
 body {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 /* 
 section {
@@ -8,10 +8,7 @@ section {
     height: 850px;
 } */
 
-img{
-    height: 100px;
-    width: 150px;
-}
+
 
 form {
     background-color: black;
@@ -25,7 +22,7 @@ form {
     line-height: 48px;
     color: rgb(255, 255, 255);
     font-family: "PT Serif", serif;
-    font-weight: 400;
+    font-weight:bold;
     font-style: normal;
     text-align: center;
 }
@@ -33,15 +30,15 @@ form {
 .box {
     position: absolute;
     left: 400px;
-    top: 50px;
-    margin: auto;
+    top: 0px;
+    /* margin: auto; */
     height: auto;
     width: 700px;
 }
 
 
 .main {
-    height: 850px;
+    height: 810px;
     width: auto;
     background-color: black;
    

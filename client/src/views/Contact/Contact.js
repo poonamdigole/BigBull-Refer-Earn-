@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Contact.css'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 function Contact() {
+
+  useEffect(()=>{
+    Aos.init();
+  }, [])
   return (
    <>
    
@@ -12,8 +19,11 @@ function Contact() {
     {/* <!--card--> */}
    
    <br/>
-    <div className="p">
-    <div className="card border-danger bg-black " >
+    <div className="p" >
+    <div className="card border-danger bg-black" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="3000"
+     >
         <div className="card-header bg-danger border-danger">CONTACT</div>
         <br/>
         <div className="card-body">
@@ -41,8 +51,9 @@ function Contact() {
     {/* <!--form--> */}
 
     <div className="for-m py-4" >
-    <div className="form bg-none">
-      <h1 class="head text-danger text-center my-4">Get in touch..!</h1>
+    <div className="form bg-none" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom"   data-aos-duration="3000">
+      <h1 className="head text-danger text-center my-4 fs-1 font-bold">Get in touch..!</h1>
       <form class="row g-3">
         <div class="col-md-6">
           <label for="validationServer01" class="form-label text-white">First name</label>
