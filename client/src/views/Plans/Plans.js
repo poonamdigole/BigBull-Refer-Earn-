@@ -59,7 +59,7 @@ function Plans() {
       </Card.Header>
       
         
-        <p><IoMdCheckmarkCircleOutline/>Profit -- Every Week</p>
+        <p><IoMdCheckmarkCircleOutline/>Profit -- Every Day</p>
         <p><IoMdCheckmarkCircleOutline/>Capital will come back -- <span className='sign'>yes</span></p>
         <p><IoMdCheckmarkCircleOutline/>Repeatable --   10 Times</p>
        
@@ -82,7 +82,7 @@ function Plans() {
       </Card.Header>
       
         
-        <p><IoMdCheckmarkCircleOutline/>Profit -- Every Week</p>
+        <p><IoMdCheckmarkCircleOutline/>Profit -- Every Day</p>
         <p><IoMdCheckmarkCircleOutline/>Capital will come back -- <span className='sign'>yes</span></p>
         <p><IoMdCheckmarkCircleOutline/>Repeatable --   20 Times</p>
        
@@ -105,7 +105,7 @@ function Plans() {
       </Card.Header>
       
         
-        <p><IoMdCheckmarkCircleOutline/>Profit -- Every Week</p>
+        <p><IoMdCheckmarkCircleOutline/>Profit -- Every Day</p>
         <p><IoMdCheckmarkCircleOutline/>Capital will come back -- <span className='sign'>yes</span></p>
         <p><IoMdCheckmarkCircleOutline/>Repeatable --30 Times</p>
        

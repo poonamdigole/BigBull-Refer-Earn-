@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 // import { Link } from "react-router-dom";
 import "../Navbar/Navbar.css";
-import logo from "../Navbar/logo.png";
-import { FaTwitter } from "react-icons/fa";
+import logo from "../../views/SignUp/logo.png";
+import {  FaInstagram, FaTelegram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { TfiFacebook } from "react-icons/tfi";
 import { NavLink } from "react-router-dom";
@@ -10,36 +10,33 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 function Navbar() {
   return (
-    <div className="NavSection">
-      <div className="bg-danger p-1 d-flex flex-row justify-content-between align-item-center ">
+    <div className="NavSection fixed-top mb-5">
+      <div className="bg-danger p-1 d-flex flex-row justify-content-between align-item-center  ">
         <div>
           <a href="/" target="/blank">
             {" "}
-            <FaTwitter className="bg-dark p-1 fs-5 rounded-1 shadow-lg-hover m-auto" />{" "}
+            <FaTelegram className=" text-white p-1 fs-2 rounded-1 shadow-lg-hover m-auto" />{" "}
           </a>
           <a href="/" target="/blank">
             {" "}
-            <FaLinkedinIn className="bg-dark p-1 fs-5 rounded-1 shadow-lg-hover m-auto" />
+            <FaInstagram className="text-white p-1 fs-2 rounded-1 shadow-lg-hover m-auto" />
           </a>
           <a href="/" target="/blank">
             {" "}
-            <TfiFacebook className="bg-dark p-1 fs-5 rounded-1 shadow-lg-hover m-auto " />{" "}
+            <TfiFacebook className="text-white p-1 fs-2 rounded-1 shadow-lg-hover m-auto " />{" "}
           </a>
         </div>
         <div className=" align-content-center ">
-          <p className="mb-0 address ">+0123456789|admin@geniusocean.com</p>
+          <p className="mb-0 fs-6 me-3 address ">+0123456789 | admin@gmail.com</p>
         </div>
       </div>
 
       {/* ---------------------second Navbar----------------------------------- */}
-      <div className=" container-fluid secnav px-1 d-flex flex-row justify-content-between align-item-center ">
-         
-         
-      </div>
+     
 
 
-      <nav class="navbar navbar-expand-lg bg-body-tertiary p-0  ">
-      <img src={logo} alt="" className="logo rounded-circle p-0" height={'80px'} width={'100px'}></img>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-0  w-full">
+      <img src={logo} alt="" className="" height={'70px'} width={'100px'}></img>
   <div class="container-fluid">
    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
