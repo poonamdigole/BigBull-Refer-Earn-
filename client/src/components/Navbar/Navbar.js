@@ -33,35 +33,32 @@ function Navbar() {
 
       {/* ---------------------second Navbar----------------------------------- */}
       <div className=" container-fluid secnav px-1 d-flex flex-row justify-content-between align-item-center ">
-          <img src={logo} alt="" className="logo rounded-circle w3  p-0"></img>
-          <div className=" align-content-center ">
-            <Link to="/" className='cursor-pointer navs'>Home</Link>
-            <Link to="/about" className='cursor-pointer navs'> About</Link>
-            <Link to="/plans" className='cursor-pointer navs'>Plans</Link>
-            <Link to="/contact" className='cursor-pointer navs'>Contact</Link>
-            <button class="btn btn-outline-dark p-1 button">
-             Log In
-            </button>
          
-        </div>
+         
       </div>
 
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-0  ">
+      <img src={logo} alt="" className="logo rounded-circle p-0" height={'80px'} width={'100px'}></img>
+  <div class="container-fluid">
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active text-white mx-4 fs-5" aria-current="page" href="/">Home</a>
+        <a class="nav-link text-white mx-3 fs-5" href="/about">About</a>
+        <a class="nav-link text-white mx-3 fs-5" href="/plans">Plans</a>
+        <a class="nav-link text-white mx-3 fs-5" href="/contact">Contact</a>
+        <a class="nav-link text-white mx-3 fs-5" href="/signup">SingUp</a>
+      </div>
+    </div>
+  </div>
+</nav>
       {/* ---------------------------------------------------------Hero section -------------------------------------*/}
 
-      <div className="heroSec align-content-end container ">
-        <div className=" w-auto">
-          <h1 className=" text-danger fs-1 ">
-            Invest for Future in Stable Platform.
-          </h1>
-          <p className="text-white para1">
-            Make a profitable business from these niches, Grow your profit,
-            invest now. See The Platform, Feel The Shine
-          </p>
-          <button type="button" class="btn btn-outline-danger mt-1 ">
-            Get Start <BsArrowRightCircleFill />
-          </button>
-        </div>
-      </div>
+    
     </div>
   );
 }

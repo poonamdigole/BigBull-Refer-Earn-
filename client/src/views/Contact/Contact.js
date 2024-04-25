@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './Contact.css'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import Navbar from '../../components/Navbar/Navbar'
 
 function Contact() {
 
@@ -10,7 +11,7 @@ function Contact() {
   }, [])
   return (
    <>
-   
+   <Navbar/>
    <div className="z">
         <h3 className="l ">CONTACT WITH US</h3>
        <p className="x text-danger fs-3">We are just step Away...</p>

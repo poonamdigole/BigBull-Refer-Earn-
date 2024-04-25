@@ -8,21 +8,31 @@ section {
     height: 850px;
 } */
 
-
-
-form {
-    background-color: black;
-    height: 50px;
-    width: auto;
-    /* opacity: 0.7; */
+img{
+    height: 100px;
+    width: 150px;
 }
 
-.main h2{
-    font-size: 36px;
+.input {
+    width: 600px;
+    margin: 5px 0px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form {
+    /* background-color: black; */
+    height: 50px;
+    width: auto;
+    /* opacity: 0.7; */}
+
+    .main h1{
+    font-size: 40px;
     line-height: 48px;
     color: rgb(255, 255, 255);
     font-family: "PT Serif", serif;
     font-weight:bold;
+    margin-top:  50px;
     font-style: normal;
     text-align: center;
 }
@@ -30,17 +40,17 @@ form {
 .box {
     position: absolute;
     left: 400px;
-    top: 0px;
-    /* margin: auto; */
+    top: 50px;
+    margin: auto;
     height: auto;
     width: 700px;
 }
 
 
 .main {
-    height: 810px;
+    height: 850px;
     width: auto;
-    background-color: black;
-   
+    /* background-color: black; */
+
     /* opacity: 0.8; */
 }
