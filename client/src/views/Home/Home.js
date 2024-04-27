@@ -1,10 +1,10 @@
 import React from "react";
-import About from "../About/About";
 import Button from "react-bootstrap/Button";
 import Deposite from "./Deposite";
 import { HiUserAdd } from "react-icons/hi";
 import { Col, Row } from "react-bootstrap";
 import "./Home.css";
+import logo from '../About/logo2.png'
 import { FaUserCheck } from "react-icons/fa6";
 import { TbArrowsRightLeft } from "react-icons/tb";
 import { BsArrowRightCircleFill } from "react-icons/bs";
@@ -12,11 +12,32 @@ import logo1 from "./Images/steps1.png";
 import logo2 from "./Images/refer.png";
 import Review from "./Review";
 import Footer from "../../components/Footer/Footer";
+import { NavLink } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
 
 function Home() {
   return (
     <div>
-      <About />
+      <Navbar/>
+       <div className="heroSec container d-flex flex-column-reverse flex-md-row justify-content-around align-items-center ">
+       
+       <div className=" w-auto">
+         <h1 className=" text-danger ">
+           Invest for Future in Stable Platform.
+         </h1>
+         <p className="text-white fs-6 ">
+           Make a profitable business from these niches, Grow your profit,
+           invest now. <br></br> See The Platform, Feel The Shine
+         </p>
+         <button type="button" class="btn btn-outline-danger mt-1 fs-5 ">
+           Get Start <BsArrowRightCircleFill />
+         </button>
+       </div>
+       <div className='hrsFirst w-md-50'>
+      <img src={logo} className='w-100 h-100'></img>
+       </div>
+     </div>
+
       <div className="mt-5">
         <div className="container mt-5 d-flex justify-content-center  ">
           {/* <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
@@ -25,12 +46,9 @@ function Home() {
           <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
           <Button variant="outline-danger ">Withdraw Log</Button>
           </Link> */}
-          <Button variant="outline-danger mx-2">Deposite Log</Button>
-          <Button variant="outline-danger ">Withdraw Log</Button>
+  
         </div>
-        <div className="m-4">
-          <Deposite />
-        </div>
+     
       </div>
 
       {/* ------------------------------section easy stapes---------------------------------------- */}
@@ -86,6 +104,8 @@ function Home() {
         </div>
       </div>
 
+      
+
       {/* -------------------------------------refer and earn =-----------------------------------------------*/}
 
       <Row className=" container-fluid mt-5 mb-5 d-flex flex-column flex-md-row justify-content-around align-items-center w-100">
@@ -123,7 +143,15 @@ function Home() {
       </Row>
 
       {/* ------------------------------------testimonial of experts------------------------------------*/}
- 
+<div className="mx-auto">
+<Button variant="outline-danger mx-3">Deposite Log</Button>
+          <Button variant="outline-danger ">Withdraw Log</Button>
+</div>
+
+      <div className="m-4">
+          <Deposite />
+        </div>
+
       <Review/>
       <Footer/>
     
