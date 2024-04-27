@@ -2,8 +2,8 @@ import React from 'react'
 
 function Deposite() {
   return (
-    <div>
-       <table className="table text-light bg-dark mt-4">
+    <div className='overflow-scroll' >
+       <table className="table text-light bg-dark mt-4 ">
   <thead className='bg-Red'>
     <tr>
       <th scope="col">Date</th>
