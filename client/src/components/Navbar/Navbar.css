@@ -40,13 +40,13 @@ width:3.5rem;
 background-color: black ;
    }
    .heroSec{
-    background-image: url('./logo2.png');
-    background-position:right;
-    background-repeat: no-repeat;
-    background-size: contain;
     height: 66vh;
+    margin-top: 25vh;
 
    }
    .para1{
     font-size: 0.8rem;
+   }
+   .hrsFirst{
+    width: 70%;
    }

@@ -8,10 +8,10 @@ section {
     height: 850px;
 } */
 
-img{
+/* img{
     height: 100px;
     width: 150px;
-}
+} */
 
 .input {
     width: 600px;
@@ -50,7 +50,4 @@ form {
 .main {
     height: 850px;
     width: auto;
-    /* background-color: black; */
-
-    /* opacity: 0.8; */
 }
