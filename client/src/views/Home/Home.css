@@ -1,0 +1,20 @@
+
+.steps h4{
+    color: rgb(255, 38, 38);
+}
+.add{
+    font-size: 3rem;
+    background: #ea2929;
+    padding: 5px;
+    border-radius: 23%;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+}
+.testy{
+    width: 96%;
+}
+.user{
+    width: 50vh;
+}

@@ -1,13 +1,8 @@
-import React, { Fragment } from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
 import "../Navbar/Navbar.css";
 import logo from "../../views/SignUp/logo.png";
 import {  FaInstagram, FaTelegram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
 import { TfiFacebook } from "react-icons/tfi";
-import { NavLink } from "react-router-dom";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="NavSection fixed-top mb-5">
@@ -37,19 +32,21 @@ function Navbar() {
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary p-0  w-full">
       <img src={logo} alt="" className="" height={'70px'} width={'100px'}></img>
-  <div class="container-fluid">
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler text-bg-light text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+  <div class="container-fluid">
+   
+   
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active text-white mx-4 fs-5" aria-current="page" href="/">Home</a>
+        <a class="nav-link active text-white mx-3 fs-5" aria-current="page" href="/">Home</a>
         <a class="nav-link text-white mx-3 fs-5" href="/about">About</a>
         <a class="nav-link text-white mx-3 fs-5" href="/plans">Plans</a>
         <a class="nav-link text-white mx-3 fs-5" href="/contact">Contact</a>
         <a class="nav-link text-white mx-3 fs-5" href="/signup">SingUp</a>
       </div>
+     
     </div>
   </div>
 </nav>
