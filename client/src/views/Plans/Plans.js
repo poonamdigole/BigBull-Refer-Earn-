@@ -18,8 +18,8 @@ function Plans() {
   return (
 <>
 <Navbar/>
-<div className="heroSec align-content-end container "  >
-        <div className=" w-auto">
+<div className="heroSec align-content-end container"  >
+        <div className=" w-auto ">
           <h1 className=" text-danger ">
             Invest for Future in Stable Platform.
           </h1>

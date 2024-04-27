@@ -48,7 +48,7 @@ function Navbar() {
         <a class="nav-link text-white mx-3 fs-5" href="/about">About</a>
         <a class="nav-link text-white mx-3 fs-5" href="/plans">Plans</a>
         <a class="nav-link text-white mx-3 fs-5" href="/contact">Contact</a>
-        <a class="nav-link text-white mx-3 fs-5" href="/signup">SingUp</a>
+        <a class="nav-link text-white mx-3 fs-5" href="/signup">DashBoard</a>
       </div>
     </div>
   </div>
