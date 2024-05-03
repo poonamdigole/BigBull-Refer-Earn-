@@ -6,7 +6,6 @@ import Col from "react-bootstrap/Col";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import "../Plans/Plans.css";
 import Navbar from "../../components/Navbar/Navbar";
-import { BsArrowRightCircleFill } from "react-icons/bs";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Footer from "../../components/Footer/Footer";
@@ -14,6 +13,7 @@ import gold from "./gold1.png";
 import platinum from "./platinum.png";
 import diamond from "./diamond.png";
 import logo from '../About/logo2.png'
+import '../../components/Navbar/Navbar.css'
 
 function Plans() {
   useEffect(() => {
@@ -22,7 +22,7 @@ function Plans() {
   return (
 <>
 <Navbar/>
-<div className="heroSec align-content-end container "  >
+<div className="heroSec container d-flex flex-column-reverse flex-md-row justify-content-around align-items-center ">
         <div className=" w-auto">
           <h1 className=" text-danger ">
            Investment Plan
@@ -31,8 +31,8 @@ function Plans() {
           Home - Invest Plan
           </p>
         </div>
-        <div className='hrsFirst w-md-50'>
-       <img src={logo} className='w-100 h-100'></img>
+        <div className='hrsFirst '>
+       <img src={logo} alt="" width={'100%'}></img>
         </div>
       </div>
       <div className="plans container mt-5 ">
@@ -59,7 +59,7 @@ function Plans() {
                       <h6>Most Popular </h6>
                     </div>
                     <div className="px-1 rounded-2  perce">
-                      <h2 className="text-danger ">9%</h2>
+                      <h2 className="text-danger ">25%</h2>
                       <p className="fs-6">Return</p>
                     </div>
                   </Card.Header>
@@ -77,7 +77,7 @@ function Plans() {
                     Repeatable -- 10 Times
                   </p>
 
-                  <h3 className="text-danger">7000₹</h3>
+                  <h3 className="text-danger">2000₹</h3>
 
                   <Card.Footer>
                     <Button variant="danger">Invest Now</Button>
@@ -92,7 +92,7 @@ function Plans() {
                       <h6>Most Popular </h6>
                     </div>
                     <div className="px-1 rounded-2  perce">
-                      <h2 className="text-danger ">11%</h2>
+                      <h2 className="text-danger ">25%</h2>
                       <p className="fs-6">Return</p>
                     </div>
                   </Card.Header>
@@ -110,7 +110,7 @@ function Plans() {
                     Repeatable -- 20 Times
                   </p>
 
-                  <h3 className="text-danger">10000₹</h3>
+                  <h3 className="text-danger">5000₹</h3>
 
                   <Card.Footer>
                     <Button variant="danger">Invest Now</Button>
@@ -125,7 +125,7 @@ function Plans() {
                       <h6>Most Popular </h6>
                     </div>
                     <div className="px-1 rounded-2  perce">
-                      <h2 className="text-danger ">15%</h2>
+                      <h2 className="text-danger ">25%</h2>
                       <p className="fs-6">Return</p>
                     </div>
                   </Card.Header>
@@ -143,7 +143,7 @@ function Plans() {
                     Repeatable --30 Times
                   </p>
 
-                  <h3 className="text-danger">15000₹</h3>
+                  <h3 className="text-danger">7000₹</h3>
 
                   <Card.Footer>
                     <Button variant="danger">Invest Now</Button>
@@ -156,9 +156,9 @@ function Plans() {
 
         {/* -------------------------------------------Plan information -----------------------------------*/}
         <div className="container text-light fs-5 mt-5 ">
-        <div className="Platinum d-flex flex-row justify-content-center align-items-center ">
-            <img src={gold} width={"23%"}></img>
-            <p className="w-50">
+        <div className="Platinum d-flex flex-md-row flex-column justify-content-center align-items-center ">
+            <img src={gold} alt="" width={"30%"}></img>
+            <p className="w-75">
              <h1 className="text-danger">Gold Plan:</h1> <br></br>
               Our Gold Plan is perfect for those just starting out with our
               refer and earn program. With no upfront costs and easy sign-up,
@@ -168,9 +168,9 @@ function Plans() {
               progress. Start referring today and watch your rewards grow!
             </p>
           </div>
-          <div className="Platinum d-flex flex-row justify-content-center align-items-center ">
-            <img src={platinum} width={"23%"}></img>
-            <p className="w-50">
+          <div className="Platinum d-flex flex-md-row flex-column justify-content-center align-items-center ">
+            <img src={platinum} alt="" width={"30%"}></img>
+            <p className="w-75">
             <h1 className="text-danger">Platinum Plan:</h1><br></br>
               Upgrade to our Platinum Plan for even more benefits and rewards.
               With advanced tracking features, personalized referral codes, and
@@ -181,9 +181,9 @@ function Plans() {
               Platinum rewards today!
             </p>
           </div>
-          <div className="Platinum d-flex flex-row justify-content-center align-items-center ">
-            <img src={diamond} width={"23%"}></img>
-            <p className="w-50">
+          <div className="Platinum d-flex flex-md-row flex-column justify-content-center align-items-center ">
+            <img src={diamond} alt="" width={"30%"}></img>
+            <p className="w-75">
             <h1 className="text-danger"> Diamond Plan:</h1><br></br>
               Are you a Diamond owner or influencer looking to monetize your
               network? Our Diamond Plan is tailored to meet your needs. With
