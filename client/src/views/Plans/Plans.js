@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import "../Plans/Plans.css";
+import "./Plans.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -22,7 +22,50 @@ function Plans() {
   return (
 <>
 <Navbar/>
-<div className="heroSec container d-flex flex-column-reverse flex-md-row justify-content-around align-items-center ">
+ <div className="heroSec container d-flex flex-column-reverse flex-md-row justify-content-around align-items-center ">
+   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content  bg-dark text-white">
+            <div className="modal-header">
+              <h4 className="modal-title text-danger fw-bold bg-white px-3 rounded">Plan Details</h4>
+              <button type="button" className="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+
+            <div className="modal-body">
+              <input 
+              type="text" 
+              placeholder="Full Name" 
+              class="form-control fs-5 bg-secondary text-white" 
+             /> <br />
+
+              <input type="email" placeholder="Email"     class="form-control fs-5 bg-secondary  text-white"/>              <br />
+
+
+              <input type="number" placeholder="Mobile Number"      class="form-control fs-5 bg-secondary text-white" /> <br />
+
+              <input type="text" placeholder="Address"      class="form-control fs-5 bg-secondary  text-white" /> <br />
+
+              <input type="text" placeholder="Refferal ID"     class="form-control fs-5 bg-secondary text-white" /> <br />
+<select className="form-control  text-white fs-5 bg-secondary ">
+<option>Select Your Plan</option>
+  <option>Gold</option>
+  <option>Platinum</option>
+  <option>Diamond</option>
+</select> <br />
+              <input type="text" placeholder="Enter Amount"     class="form-control fs-5 bg-secondary text-white" /> <br />
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-danger mx-auto px-4  fs-5 " 
+         
+              >Invest Now</button>
+            </div>
+          </div>
+     </div>
+      </div> 
+      </div>
+
+<div className="heroSec align-content-end container "  >
         <div className=" w-auto">
           <h1 className=" text-danger ">
            Investment Plan
@@ -80,7 +123,13 @@ function Plans() {
                   <h3 className="text-danger">2000₹</h3>
 
                   <Card.Footer>
-                    <Button variant="danger">Invest Now</Button>
+                    {/* <Button variant="danger">Invest Now</Button> */}
+                    <button type="button" variant="danger" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Invest Now
+</button>
+
+
+
                   </Card.Footer>
                 </Card>
               </Col>
@@ -113,7 +162,9 @@ function Plans() {
                   <h3 className="text-danger">5000₹</h3>
 
                   <Card.Footer>
-                    <Button variant="danger">Invest Now</Button>
+                  <button type="button" variant="danger" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Invest Now
+</button>
                   </Card.Footer>
                 </Card>
               </Col>
@@ -146,7 +197,9 @@ function Plans() {
                   <h3 className="text-danger">7000₹</h3>
 
                   <Card.Footer>
-                    <Button variant="danger">Invest Now</Button>
+                  <button type="button" variant="danger" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Invest Now
+</button>
                   </Card.Footer>
                 </Card>
               </Col>
