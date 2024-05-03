@@ -13,10 +13,10 @@ import { HiUserGroup } from "react-icons/hi2";
 import { MdAccountBalanceWallet } from "react-icons/md";
 
 function Dashboard() {
-    const [userName,setName]=useState([]);
-    const [userBalance,setBalance]=useState([]);
-    const [userProfit,setProfit]=useState([]);
-    const [userReffer,setReffer]=useState([]);
+    // const [userName,setName]=useState([]);
+    // const [userBalance,setBalance]=useState([]);
+    // const [userProfit,setProfit]=useState([]);
+    // const [userReffer,setReffer]=useState([]);
     const [data,setData]=useState([]);
 
 
