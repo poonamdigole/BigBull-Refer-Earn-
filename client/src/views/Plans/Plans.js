@@ -35,27 +35,27 @@ function Plans() {
               <input 
               type="text" 
               placeholder="Full Name" 
-              class="form-control fs-5 bg-secondary fw-bold text-white" 
+              class="form-control fs-5 bg-secondary text-white" 
              /> <br />
 
-              <input type="email" placeholder="Email"     class="form-control fs-5 bg-secondary fw-bold text-white"/>              <br />
+              <input type="email" placeholder="Email"     class="form-control fs-5 bg-secondary  text-white"/>              <br />
 
 
-              <input type="number" placeholder="Mobile Number"      class="form-control fs-5 bg-secondary fw-bold text-white" /> <br />
+              <input type="number" placeholder="Mobile Number"      class="form-control fs-5 bg-secondary text-white" /> <br />
 
-              <input type="text" placeholder="Address"      class="form-control fs-5 bg-secondary fw-bold text-white" /> <br />
+              <input type="text" placeholder="Address"      class="form-control fs-5 bg-secondary  text-white" /> <br />
 
-              <input type="text" placeholder="Refferal ID"     class="form-control fs-5 bg-secondary fw-bold text-white" /> <br />
-<select className="form-control fw-bold text-white fs-5 bg-secondary ">
+              <input type="text" placeholder="Refferal ID"     class="form-control fs-5 bg-secondary text-white" /> <br />
+<select className="form-control  text-white fs-5 bg-secondary ">
 <option>Select Your Plan</option>
   <option>Gold</option>
   <option>Platinum</option>
   <option>Diamond</option>
 </select> <br />
-              <input type="text" placeholder="Enter Amount"     class="form-control fs-5 bg-secondary fw-bold text-white" /> <br />
+              <input type="text" placeholder="Enter Amount"     class="form-control fs-5 bg-secondary text-white" /> <br />
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-danger mx-auto px-4 fw-bold fs-5 " 
+              <button type="button" className="btn btn-danger mx-auto px-4  fs-5 " 
          
               >Invest Now</button>
             </div>
