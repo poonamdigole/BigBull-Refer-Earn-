@@ -11,8 +11,6 @@
 .perce h2{
     font-family: 'sarif';
 }
-
-.form-control::placeholder {
-    color:white;
-    /* opacity: 0.6; */
-  }
+.marg{
+    margin-top: 25px;
+}

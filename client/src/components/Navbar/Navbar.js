@@ -43,8 +43,8 @@ function Navbar() {
         <a class="nav-link active text-white mx-3 fs-5" aria-current="page" href="/">Home</a>
         <a class="nav-link text-white mx-3 fs-5" href="/about">About</a>
         <a class="nav-link text-white mx-3 fs-5" href="/plans">Plans</a>
-        <a class="nav-link text-white mx-3 fs-5" href="/contact">Contact</a>
-        <a class="nav-link text-white mx-3 fs-5" href="/signup">DashBoard</a>
+        <a class="nav-link text-white mx-3 fs-5" href="/Login">DashBoard</a>
+        {/* <a class="nav-link text-white mx-3 fs-5" href="/dashboard">DashBoard</a> */}
       </div>
      
     </div>

@@ -73,7 +73,7 @@ function Deposite() {
     </tr>
     <tr>
     
-      <td scope="row">Apr 25, 2024</td>
+      <td>Apr 25, 2024</td>
       <td>AOK4UNJV3I8J</td>
       <td>Flutterwave</td>
       <td>Jenifer</td>
