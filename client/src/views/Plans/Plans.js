@@ -102,7 +102,7 @@ function Plans() {
         </div>
       </div>
 
-      <div className="marg d-flex flex-column-reverse flex-md-row justify-content-around align-content-end container ">
+      <div className="marg d-flex flex-column-reverse flex-md-row justify-content-around align-content-end container mt-5">
         <div className=" w-auto align-content-center ">
           <h1 className=" text-danger ">Investment Plan</h1>
           <p className="text-white fs-5 ">Home - Invest Plan</p>
@@ -117,7 +117,7 @@ function Plans() {
           data-aos="zoom-out-up"
           data-aos-duration="2000"
         >
-          <h5 className=" text-danger mt-5 ">Pricing Plan______</h5>
+          <h5 className=" text-danger ">Pricing Plan______</h5>
           <h1 className=" text-danger fs-1">Best Investment Packages</h1>
           <p className="text-white w-75 container mb-5">
             Deserunt hic consequatur ex placeat! atque repellendus inventore

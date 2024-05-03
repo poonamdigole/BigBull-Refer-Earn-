@@ -14,3 +14,6 @@
 .marg{
     margin-top: 25px;
 }
+.form-control::placeholder{
+color: white;
+}
