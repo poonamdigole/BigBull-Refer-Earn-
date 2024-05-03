@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import Navbar from '../../components/Navbar/Navbar';
-import logo from './logo2.png'
+import logo from "../logo.png";
 import '../../components/Navbar/Navbar.css'
 function About() {
   return (
