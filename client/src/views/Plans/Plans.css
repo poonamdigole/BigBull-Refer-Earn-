@@ -17,3 +17,6 @@
 .form-control::placeholder{
 color: white;
 }
+.proper{
+    text-align: justify;
+}

@@ -49,24 +49,28 @@ function Plans() {
                   type="text"
                   placeholder="Full name"
                   className="form-control fs-5 bg-secondary text-danger "
+                  name="fname"
                 />{" "}
                 <br />
                 <input
                   type="email"
                   placeholder="Email"
                   className="form-control fs-5 bg-secondary  text-white"
+                  name="email"
                 />{" "}
                 <br />
                 <input
                   type="number"
                   placeholder="Mobile Number"
                   className="form-control fs-5 bg-secondary text-white"
+                  name="no"
                 />{" "}
                 <br />
                 <input
                   type="text"
                   placeholder="Address"
                   className="form-control fs-5 bg-secondary text-white"
+                  name="Add"
                 />{" "}
                 <br />
                 <input
@@ -75,7 +79,7 @@ function Plans() {
                   className="form-control fs-5 bg-secondary text-white"
                 />{" "}
                 <br />
-                <select className="form-control  text-white fs-5 bg-secondary ">
+                <select className="form-control  text-white fs-5 bg-secondary " name="plan">
                   <option>Select Your Plan</option>
                   <option>Gold</option>
                   <option>Platinum</option>
@@ -86,6 +90,14 @@ function Plans() {
                   type="text"
                   placeholder="Enter Amount"
                   className="form-control fs-5 bg-secondary text-white"
+                  name="invest"
+                />{" "}
+                <br />
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  className="form-control fs-5 bg-secondary text-white"
+                  name="pass"
                 />{" "}
                 <br />
               </div>
@@ -102,7 +114,7 @@ function Plans() {
         </div>
       </div>
 
-      <div className="marg d-flex flex-column-reverse flex-md-row justify-content-around align-content-end container mt-5">
+      <div className="heroSec container d-flex flex-column-reverse flex-md-row justify-content-around align-items-center">
         <div className=" w-auto align-content-center ">
           <h1 className=" text-danger ">Investment Plan</h1>
           <p className="text-white fs-5 ">Home - Invest Plan</p>
@@ -240,7 +252,7 @@ function Plans() {
 
                   <Card.Footer>
                     <button
-                      type="button"
+                      type="submit"
                       variant="danger"
                       className="btn btn-danger"
                       data-bs-toggle="modal"
@@ -256,10 +268,10 @@ function Plans() {
         </div>
 
         {/* -------------------------------------------Plan information -----------------------------------*/}
-        <div className="container text-light fs-5 mt-5 ">
+        <div className="container text-light fs-5 mt-5 proper">
           <div className="Platinum d-flex flex-md-row flex-column justify-content-center align-items-center ">
             <img src={gold} alt="" width={"30%"}></img>
-            <p className="w-75">
+            <p className="w-75 ">
               <h1 className="text-danger">Gold Plan:</h1> <br></br>
               Our Gold Plan is perfect for those just starting out with our
               refer and earn program. With no upfront costs and easy sign-up,
