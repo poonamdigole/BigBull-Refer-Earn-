@@ -13,25 +13,29 @@ import { HiUserGroup } from "react-icons/hi2";
 import { MdAccountBalanceWallet } from "react-icons/md";
 
 function Dashboard() {
-    const [userName,setName]=useState([]);
-    const [userBalance,setBalance]=useState([]);
-    const [userProfit,setProfit]=useState([]);
-    const [userReffer,setReffer]=useState([]);
     const [data,setData]=useState([]);
-
-
+    const [show, setShow] = useState(false);
+    const [url, setUrl] = useState('');
+    const [user, setUser] = useState('');
+    const [balance, setBalance] = useState('');
+    const [profit,setProfit] = useState('');
+    const [reffer,setReffer] = useState('');
     useEffect(()=>{
       const getUserData=async()=>{
         const reqData=await fetch("http://localhost/bigbull/api/user.php");
-        const resData=await reqData.json();
-        console.log(resData)
+        const resData=await reqData.json(); 
+      //  console.log(resData[0].user_id)       
+        setUrl(resData[0].user_id);
+        setUser(resData[0].username);
+        setBalance(resData[0].balance);
+        setProfit(resData[0].profit);
+        setReffer(resData.length-1);
         setData(resData);
       }
       getUserData();
     },[])
-    const [show, setShow] = useState(false);
-    const [url, setUrl] = useState('0958980tiu09ueudeijiurjrrjoreff=3266dcfa238c067719a09f1eabc4e1b4');
-    // console.log(data.username)
+
+     console.log(data)
     return (
  <div>
 <div>
@@ -66,7 +70,7 @@ function Dashboard() {
       </div>  
       <div className='d-flex flex-column align-items-center p-sm-2 '>
         <FaCircleUser className='fs-1 text-white mx-4'/>
-        <h4 className='text-danger'>{data.username}</h4>
+        <h4 className='text-danger'>{user}</h4>
     </div>
     </div>
     </div>
@@ -85,7 +89,7 @@ function Dashboard() {
             </Col>
             <Col>
             <p>
-                User ID:<h4 className="text-danger">#{data.id}</h4>
+                User ID:<h4 className="text-danger">{url}</h4>
             </p>
             </Col>
            </Row>
@@ -97,7 +101,7 @@ function Dashboard() {
             </Col>
             <Col>
             <p>
-            Main Balance:<h4 className="text-danger">{data.balance}₹</h4>
+            Main Balance:<h4 className="text-danger">{balance}</h4>
             </p>
             </Col>
            </Row>
@@ -109,7 +113,7 @@ function Dashboard() {
             </Col>
             <Col>
             <p>
-            Total Reffer:<h4 className="text-danger">{data.reffer}</h4>
+            Total Reffer:<h4 className="text-danger">{reffer}</h4>
             </p>
             </Col>
            </Row>
@@ -127,14 +131,14 @@ function Dashboard() {
                   </Col>
                   <Col>
                     <p>
-                      Total Profit:<h4 className="text-danger">{data.profit}₹</h4>
+                      Total Profit:<h4 className="text-danger">{profit}</h4>
                     </p>
                   </Col>
                 </Row>
               </Col>
         
       </Row>
-      </Container>
+</Container>
       <div className="container mt-5">
         <h2 className="text-danger mx-5">Referral URL</h2>
       <div className="container w-100 p-5 align-items-center d-flex position-relative ">
@@ -144,12 +148,42 @@ function Dashboard() {
           <Toast.Body>Link Copy</Toast.Body>
         </Toast>
       </div>
-      </div>
+      </div>   
+      <div className="container">
+<h2 className="text-danger mx-5">You Reffer</h2>
+<table className="table text-light bg-dark mt-4 ">
+  <thead className='bg-Red'>
+    <tr>
+    <th scope="col">User_Id</th>
+    <th scope="col">Username</th>
+    <th scope="col">Plan</th>
+    <th scope="col">Date</th>
+    
+    </tr>
+  </thead>
+   <tbody>
+  
+    {
+  data.slice(1).map((row,i)=>(
+        <tr key={i}>
+        <td>{row.user_id}</td>
+        <td>{row.username}</td>
+        <td>{row.plan}</td>
+        <td>{row.date}</td>
+        </tr> 
+  
+  ))
+   
+   }
+   
+  </tbody>
+</table>
+</div>
 <div className="container">
 <h2 className="text-danger mx-5">History</h2>
 <Deposite/>
 </div>
-</div>
+</div> 
     </div>
   )
 }

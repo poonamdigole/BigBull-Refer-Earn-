@@ -11,8 +11,15 @@
 .perce h2{
     font-family: 'sarif';
 }
-
-.form-control::placeholder {
-    color:white;
-    /* opacity: 0.6; */
-  }
+.marg{
+    margin-top: 25px;
+}
+.form-control::placeholder{
+color: white;
+}
+.proper{
+    text-align: justify;
+}
+.popup{
+    height: 100vh;
+}

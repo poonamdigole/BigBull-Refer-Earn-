@@ -23,7 +23,7 @@ function Login() {
       </Form.Group>
      
       <Form.Group  className="mb-3 text-center mt-5 " controlId="formBasicButton">
-      <Button variant="outline-danger mt-5">
+      <Button variant="outline-danger ">
       <a class="nav-link text-white mx-3 fs-5" href="/dashboard">Log In</a>
       </Button>
       </Form.Group>
