@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 .btn:hover{
         transform: scale(1.2); /* Change the scale factor as per your preference */
     
 }
 .btn{
     transition: transform 0.3s ease;
+=======
+.btn:hover{
+        transform: scale(1.2); /* Change the scale factor as per your preference */
+    
+}
+.btn{
+    transition: transform 0.3s ease;
+>>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
 }

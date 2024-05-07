@@ -21,27 +21,34 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
 
   case "GET":
-    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='663673f2176ff'");
+ 
+  //   $getuserrow= mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='$userid'");
+  //  // print_r($getuserrow);
+  //   while($row= mysqli_fetch_array($getuserrow))
+  //   {
+  //    $json_array['rowUserdata']= array('user_id'=>$row['user_id'], 'username' => $row['username'],'plan'=>$row['plan'], 'balance' => $row['balance'], 'profit' => $row['profit'], 'date' => $row['date'], 'reffer'=> $row['refferal']);
+  //   }
+  //   echo json_encode($json_array['rowUserdata']);
+  //   return;
+
+    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='6636705cd7722'");
     
     if (mysqli_num_rows($alluser) > 0) {
       while ($row = mysqli_fetch_array($alluser)) {
         $json_array["userdata"][]= array("id" => $row['id'], "user_id"=>$row['user_id'], "username" => $row['username'], "balance" => $row['balance'], "profit" => $row['profit'], "date" => $row['date'], "reffer" => $row['refferal']);
       }
-  $info=$json_array["userdata"];
    
-    $refferid= $info[0]['user_id'];
-   
-     $reffer =  mysqli_query($db_conn, "SELECT * FROM users WHERE refferal='$refferid'");
+     $reffer =  mysqli_query($db_conn, "SELECT user_id,username,plan,balance,profit,refferal,date FROM users");
       if (mysqli_num_rows($reffer) > 0) {
         $invite=[];
         while($row = mysqli_fetch_array($reffer)) {
-          $json_array["userdata"][]= array("id" => $row['id'], "user_id"=>$row['user_id'], "username" => $row['username'], "date" => $row['date'],"plan"=>$row['plan']);
+          $json_array["userdata"][]= array("user_id"=>$row['user_id'], "username" => $row['username'],"plan"=>$row['plan'], "balance" => $row['balance'], "profit" => $row['profit'], "date" => $row['date'], "reffer" => $row['refferal']);
         //  array_push($invite,$row);
         }
          echo json_encode( $json_array["userdata"]);
       return;
     }else{
-     $data= $json_array["userdata"];
+     $data= [$json_array["userdata"]];
          echo json_encode($data);
          return;
     }
@@ -49,6 +56,7 @@ switch ($method) {
       echo json_encode(["result" => "Please check the data"]);
       return;
     }
+
     break;
 
   case "POST":
@@ -113,3 +121,4 @@ switch ($method) {
     break;
    
 }
+echo uniqid();

@@ -13,7 +13,8 @@ import logo2 from "./Images/refer.png";
 import Review from "./Review";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-
+import reffer from "../Home/Images/reffer.png"
+import reffer2 from "../Home/Images/reffer2.webm"
 function Home() {
   return (
     <div>
@@ -33,6 +34,8 @@ function Home() {
         </div>
         <div className="hrsFirst w-md-50">
           <img src={logo} alt='' className="w-100 h-100"></img>
+<<<<<<< HEAD
+=======
         </div>
       </div>
 
@@ -44,13 +47,39 @@ function Home() {
           <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
           <Button variant="outline-danger ">Withdraw Log</Button>
           </Link> */}
+>>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
         </div>
       </div>
+
+      {/* ---------------------------------announcement section---------------------------------- */}
+<section className=" container d-flex align-content-center">
+  <div className="w-50 p-4 m-auto ">
+    <div className="m-2 w-100">
+      <h1 className="text-danger mb-4">Exciting News: Introducing Our Refer & Earn Program!</h1>
+      <p className="text-white ">
+       We are thrilled to announce the launch of our brand new Refer & Earn program, designed to reward you for spreading the word about our platform and bringing more friends into our community.
+      </p>
+    </div>
+    <div className="">
+     <img src={reffer} width={'60%'} alt=""></img>
+    </div>
+ 
+
+  </div>
+  <div className="container m-3 d-flex justify-content-center align-items-center w-50">
+<video  controls autoPlay loop  width="500" height="300" className="vedio">
+        <source src={reffer2} type="video/mp4" />
+        Your browser does not support the video tag.
+</video>
+  </div>
+</section>
+
+
 
       {/* ------------------------------section easy stapes---------------------------------------- */}
       <div className="container my-5 d-flex flex-column-reverse flex-md-row justify-content-around align-items-center">
         <div className="mt-5">
-          <div className="text-md-end ">
+          <div className="text-md-end w-75">
             <h6 className="text-danger">How To Get Started________</h6>
             <h1 className="text-white">We have some easy steps!</h1>
             <p className="text-white para1">
