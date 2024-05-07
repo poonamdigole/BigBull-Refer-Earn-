@@ -13,7 +13,11 @@ import platinum from "./platinum.png";
 import diamond from "./diamond.png";
 import logo from "../logo.png";
 import "../../components/Navbar/Navbar.css";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+
+>>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
 function Plans() {
   useEffect(() => {
     Aos.init();
