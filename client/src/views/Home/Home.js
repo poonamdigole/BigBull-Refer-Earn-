@@ -34,20 +34,6 @@ function Home() {
         </div>
         <div className="hrsFirst w-md-50">
           <img src={logo} alt='' className="w-100 h-100"></img>
-<<<<<<< HEAD
-=======
-        </div>
-      </div>
-
-      <div className="mt-5">
-        <div className="container mt-5 d-flex justify-content-center  ">
-          {/* <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-          
-          </Link>
-          <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-          <Button variant="outline-danger ">Withdraw Log</Button>
-          </Link> */}
->>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
         </div>
       </div>
 

@@ -30,12 +30,20 @@ switch ($method) {
   //   }
   //   echo json_encode($json_array['rowUserdata']);
   //   return;
-
-    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='6636705cd7722'");
+    $cmpbal=mysqli_query($db_conn, "SELECT balance,profit FROM users ");
+    if (mysqli_num_rows($cmpbal) > 0) {
+      $bal=0;
+      while ($evr = mysqli_fetch_array($cmpbal)) {
+      $bal=$bal+ $evr['balance']-2*$evr['profit'];
+      }
+    }
+  //    echo $bal;
+    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='663b89770aa60'");
     
+  
     if (mysqli_num_rows($alluser) > 0) {
       while ($row = mysqli_fetch_array($alluser)) {
-        $json_array["userdata"][]= array("id" => $row['id'], "user_id"=>$row['user_id'], "username" => $row['username'], "balance" => $row['balance'], "profit" => $row['profit'], "date" => $row['date'], "reffer" => $row['refferal']);
+        $json_array["userdata"][]= array("id" => $row['id'], "user_id"=>$row['user_id'], "username" => $row['username'], "balance" => $row['balance'], "profit" => $row['profit'], "date" => $row['date'], "reffer" => $row['refferal'] ,"cmp"=>$bal);
       }
    
      $reffer =  mysqli_query($db_conn, "SELECT user_id,username,plan,balance,profit,refferal,date FROM users");
@@ -56,69 +64,72 @@ switch ($method) {
       echo json_encode(["result" => "Please check the data"]);
       return;
     }
-
+    
+$db_conn ->close();
     break;
 
-  case "POST":
+  // case "POST":
 
-    $userpostdata = json_decode(file_get_contents("php://input"));
+  //   $userpostdata = json_decode(file_get_contents("php://input"));
 
-    // echo "sucess data";
+  //   // echo "sucess data";
 
-    // print_r($userpostdata); die;
-    $user_id=uniqid();
-    $username = $userpostdata->username;
-    $email = $userpostdata->email;
-    $mobile = $userpostdata->mobile;
-    $address = $userpostdata->address;
-    $plan = $userpostdata->palns;
-    $profit = '00000';
-    $balance = $userpostdata->balance +$profit;
-    $refferal = $userpostdata->refferal;
-    $password = $userpostdata->password;
-    $bonus = (25*($balance-$profit))/100;
-    $result1 = mysqli_query($db_conn,"INSERT INTO `users`(`user_id`,`username`, `mobile`, `email`, `address`, `plan`, `balance`, `profit`, `refferal`, `password`) VALUES('$user_id','$username', '$mobile', '$email','$address','$plan','$balance',$profit,'$refferal',' $password')")or die('username in not available');
-    $result2 = mysqli_query($db_conn,"UPDATE `users` SET profit=profit+$bonus ,balance=balance+$bonus WHERE user_id='$refferal'" )or die();
-    // if ($result2) {
-    //   $result4=mysqli_query($db_conn,"SELECT 'refferal' FROM users WHERE 'user_id'='$refferal'" );
-    //   if (mysqli_num_rows($result4) > 0) {
-    //     while ($row = mysqli_fetch_assoc($result4)) {
-    //    echo($row);
-    //     }
+  //   // print_r($userpostdata); die;
+  //   $user_id=uniqid();
+  //   $username = $userpostdata->username;
+  //   $email = $userpostdata->email;
+  //   $mobile = $userpostdata->mobile;
+  //   $address = $userpostdata->address;
+  //   $plan = $userpostdata->palns;
+  //   $profit = '00000';
+  //   $balance = $userpostdata->balance +$profit;
+  //   $refferal = $userpostdata->refferal;
+  //   $password = $userpostdata->password;
+  //   $bonus = (25*($balance-$profit))/100;
+  //   $result1 = mysqli_query($db_conn,"INSERT INTO `users`(`user_id`,`username`, `mobile`, `email`, `address`, `plan`, `balance`, `profit`, `refferal`, `password`) VALUES('$user_id','$username', '$mobile', '$email','$address','$plan','$balance',$profit,'$refferal',' $password')")or die('username in not available');
+  //   $result2 = mysqli_query($db_conn,"UPDATE `users` SET profit=profit+$bonus ,balance=balance+$bonus WHERE user_id='$refferal'" )or die();
+  //   // if ($result2) {
+  //   //   $result4=mysqli_query($db_conn,"SELECT 'refferal' FROM users WHERE 'user_id'='$refferal'" );
+  //   //   if (mysqli_num_rows($result4) > 0) {
+  //   //     while ($row = mysqli_fetch_assoc($result4)) {
+  //   //    echo($row);
+  //   //     }
 
-    //     return;
-    //   } else {
-    //     echo json_encode(["result" => "Please check the data"]);
-    //     return;
-    //   }
-    //   while($result4!="NUll"){
-    //   $reff=mysqli_query($db_conn,"SELECT `refferal` FROM users WHERE user_id=`$result4`" );
-    //   $intensive=((4*($balance-$profit))/100);
-    //   $result3=mysqli_query($db_conn,"UPDATE `users` SET profit=profit+$intensive ,balance=balance+$bonus WHERE user_id='$reff'" );
-    //   $result4=$reff;
-    //   }
+  //   //     return;
+  //   //   } else {
+  //   //     echo json_encode(["result" => "Please check the data"]);
+  //   //     return;
+  //   //   }
+  //   //   while($result4!="NUll"){
+  //   //   $reff=mysqli_query($db_conn,"SELECT `refferal` FROM users WHERE user_id=`$result4`" );
+  //   //   $intensive=((4*($balance-$profit))/100);
+  //   //   $result3=mysqli_query($db_conn,"UPDATE `users` SET profit=profit+$intensive ,balance=balance+$bonus WHERE user_id='$reff'" );
+  //   //   $result4=$reff;
+  //   //   }
       
-    //   return;
-    // } else {
+  //   //   return;
+  //   // } else {
  
-    //   return;
+  //   //   return;
 
-    // }
-    // $profit2 =(25*$balance)/100 
-   // $result2 = mysqli_query($db_conn,"UPDATE `users` SET `profit`='$profit' WHERE 1")
-    if ($result1) {
-      echo json_encode(["success" => "User Added Successfully"]);
-      return;
+  //   // }
+  //   // $profit2 =(25*$balance)/100 
+  //  // $result2 = mysqli_query($db_conn,"UPDATE `users` SET `profit`='$profit' WHERE 1")
+  //   if ($result1) {
+  //     echo json_encode(["success" => "User Added Successfully"]);
+  //     return;
 
-    } else {
+  //   } else {
 
-      echo json_encode(["success" => "Please Check the User Data!"]);
+  //     echo json_encode(["success" => "Please Check the User Data!"]);
 
-      return;
+  //     return;
 
-    }
+  //   }
 
-    break;
+  //   $db_conn ->close();
+  //   break;
    
 }
-echo uniqid();
+
+?>

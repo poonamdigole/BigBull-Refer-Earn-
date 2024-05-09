@@ -13,11 +13,7 @@ import platinum from "./platinum.png";
 import diamond from "./diamond.png";
 import logo from "../logo.png";
 import "../../components/Navbar/Navbar.css";
-<<<<<<< HEAD
 import axios from "axios";
-=======
-
->>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
 function Plans() {
   useEffect(() => {
     Aos.init();
@@ -47,7 +43,7 @@ function Plans() {
         setMessage(res.data.success);
         setTimeout(()=>{
         window.location.reload()
-        },800)
+        },500)
        
       }
     }
@@ -292,7 +288,7 @@ function Plans() {
                       <h4>Diamond</h4>
                       <h6>Most Popular </h6>
                     </div>
-                    <div className="px-1 rounded-2  perce">
+                    <div className="px-1 rounded-2 perce">
                       <h2 className="text-danger ">25%</h2>
                       <p className="fs-6">Return</p>
                     </div>
