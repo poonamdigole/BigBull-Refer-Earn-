@@ -60,4 +60,8 @@ $info=$json_array["userdata"];
   }
 }
   }
+  $db_conn ->close();
+  break;
  }
+
+?>

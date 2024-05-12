@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Deposite from "./Deposite";
 import { HiUserAdd } from "react-icons/hi";
 import { Col, Row } from "react-bootstrap";
 import "./Home.css";
@@ -8,13 +6,14 @@ import logo from "../logo.png";
 import { FaUserCheck } from "react-icons/fa6";
 import { TbArrowsRightLeft } from "react-icons/tb";
 import { BsArrowRightCircleFill } from "react-icons/bs";
+import { FaInstagram, FaTelegram } from "react-icons/fa";
 import logo1 from "./Images/steps1.png";
 import logo2 from "./Images/refer.png";
 import Review from "./Review";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import reffer from "../Home/Images/reffer.png"
-import reffer2 from "../Home/Images/reffer2.webm"
+import reffer from "../Home/Images/reffer.png";
+import reffer2 from "../Home/Images/reffer2.webm";
 function Home() {
   return (
     <div>
@@ -29,52 +28,52 @@ function Home() {
             invest now. <br></br> See The Platform, Feel The Shine
           </p>
           <button type="button" class="btn btn-outline-danger mt-1 fs-5 ">
-            Get Start <BsArrowRightCircleFill />
+          <a class="nav-link text-white mx-3 fs-5" href="/plans">Get Start <BsArrowRightCircleFill /></a>
           </button>
         </div>
         <div className="hrsFirst w-md-50">
-          <img src={logo} alt='' className="w-100 h-100"></img>
-<<<<<<< HEAD
-=======
-        </div>
-      </div>
-
-      <div className="mt-5">
-        <div className="container mt-5 d-flex justify-content-center  ">
-          {/* <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-          
-          </Link>
-          <Link to="withdraw"  className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'>
-          <Button variant="outline-danger ">Withdraw Log</Button>
-          </Link> */}
->>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
+          <img src={logo} alt="" className="w-100 h-100"></img>
         </div>
       </div>
 
       {/* ---------------------------------announcement section---------------------------------- */}
-<section className=" container d-flex align-content-center">
-  <div className="w-50 p-4 m-auto ">
-    <div className="m-2 w-100">
-      <h1 className="text-danger mb-4">Exciting News: Introducing Our Refer & Earn Program!</h1>
-      <p className="text-white ">
-       We are thrilled to announce the launch of our brand new Refer & Earn program, designed to reward you for spreading the word about our platform and bringing more friends into our community.
-      </p>
-    </div>
-    <div className="">
-     <img src={reffer} width={'60%'} alt=""></img>
-    </div>
- 
-
-  </div>
-  <div className="container m-3 d-flex justify-content-center align-items-center w-50">
-<video  controls autoPlay loop  width="500" height="300" className="vedio">
-        <source src={reffer2} type="video/mp4" />
-        Your browser does not support the video tag.
-</video>
-  </div>
-</section>
-
-
+      <section className=" container d-flex align-items-center flex-column flex-md-row justify-content-around ">
+        <div className="w-md-50 p-4 m-md-auto ">
+          <div className="m-2 w-100">
+            <h1 className="text-danger mb-4">🎉 Exciting News! 🎉</h1>
+            <p className="text-white ">
+              Stay updated with the latest announcements, exclusive offers, and
+              insider insights by joining our Telegram channel{" "}
+              <a href="https://t.me/big_bull_refer_and_earn" target="/blank">
+                Join
+              </a>
+              . It's your passport to staying ahead of the curve and maximizing
+              your earning potential. Don't miss out – join us on Telegram today
+              and let the referral rewards begin! ✨
+            </p>
+          </div>
+          <div className="">
+            <img src={reffer} width={"60%"} alt=""></img>
+          </div>
+        </div>
+        <div className="container m-3 d-flex justify-content-center flex-column align-items-center w-md-50">
+          <div>
+          <h2 className="text-danger">Join Announcement Channel</h2>
+          <a href="https://t.me/big_bull_refer_and_earn" className="fs-5" target="/blank"><FaTelegram className="me-2"/>https://t.me/big_bull_refer_and_earn</a>
+          </div>
+          <video
+            controls
+            autoPlay
+            loop
+            width="500"
+            height="300"
+            className="vedio"
+          >
+            <source src={reffer2} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
 
       {/* ------------------------------section easy stapes---------------------------------------- */}
       <div className="container my-5 d-flex flex-column-reverse flex-md-row justify-content-around align-items-center">
@@ -109,8 +108,8 @@ function Home() {
                 Select the plan that best fits your needs and aspirations.
                 Whether you're a casual advocate or a business looking to scale
                 your referral strategy, we have options for everyone. Choose
-                from our Gold, Platinum,Diamond plans to unlock
-                a range of benefits and rewards.
+                from our Gold, Platinum,Diamond plans to unlock a range of
+                benefits and rewards.
               </p>
             </Col>
             <Col className=" align-content-center col-4  ">
@@ -134,7 +133,7 @@ function Home() {
           </Row>
         </div>
         <div className="hrsFirst w-md-50">
-          <img src={logo1} alt='' className="w-100 h-100"></img>
+          <img src={logo1} alt="" className="w-100 h-100"></img>
         </div>
       </div>
 
@@ -169,20 +168,12 @@ function Home() {
             </Col>
           </Row>
           <button type="button" class="btn btn-outline-danger mt-1 ">
-            Get Start <BsArrowRightCircleFill />
+          <a class="nav-link text-white mx-3 fs-5" href="/plans">Get Start <BsArrowRightCircleFill /></a>
           </button>
         </Col>
       </Row>
 
       {/* ------------------------------------testimonial of experts------------------------------------*/}
-      <div className="mx-auto w-100 d-flex  justify-content-center ">
-        <Button variant="outline-danger mx-3">Deposite Log</Button>
-        <Button variant="outline-danger ">Withdraw Log</Button>
-      </div>
-
-      <div className="m-4">
-        <Deposite />
-      </div>
 
       <Review />
       <Footer />

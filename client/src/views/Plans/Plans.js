@@ -13,11 +13,7 @@ import platinum from "./platinum.png";
 import diamond from "./diamond.png";
 import logo from "../logo.png";
 import "../../components/Navbar/Navbar.css";
-<<<<<<< HEAD
 import axios from "axios";
-=======
-
->>>>>>> 5e232e65d7e3bd0909628c06ae54a8ad2b57fb4c
 function Plans() {
   useEffect(() => {
     Aos.init();
@@ -42,12 +38,13 @@ function Plans() {
     e.preventDefault()
       //console.log(formvalue);
       const formData={username:formvalue.username,email:formvalue.email,mobile:formvalue.mobile,address:formvalue.address,palns:formvalue.plans,balance:formvalue.balance,refferal:formvalue.reffer, password:formvalue.password,}
-      const res = await axios.post("http://localhost/bigbull/api/user.php",formData);
-      if(res.data.success){
-        setMessage(res.data.success);
+      const res = await axios.post("http://localhost/bigbull/api/plan.php",formData);
+      console.log(res);
+      if(res){
+        setMessage(res.success);
         setTimeout(()=>{
         window.location.reload()
-        },800)
+        },500)
        
       }
     }
@@ -106,6 +103,7 @@ function Plans() {
                   name="mobile"
                   value={formvalue.mobile}
                   onChange={handleInput}
+                  maxLength={10}
                   required
                 />{" "}
                 <br />
@@ -195,7 +193,7 @@ function Plans() {
         >
           <h5 className=" text-danger ">Pricing Plan______</h5>
           <h1 className=" text-danger fs-1">Best Investment Packages</h1>
-          <p className="text-white w-75 container mb-5">
+          <p className="text-white w-75 container mb-5 text proper">
           Joining our refer and earn program comes with a host of benefits. Not only do you have the opportunity to earn rewards for each successful referral Plus, your friends get to enjoy exclusive discounts.
           </p>
         </div>
@@ -292,7 +290,7 @@ function Plans() {
                       <h4>Diamond</h4>
                       <h6>Most Popular </h6>
                     </div>
-                    <div className="px-1 rounded-2  perce">
+                    <div className="px-1 rounded-2 perce">
                       <h2 className="text-danger ">25%</h2>
                       <p className="fs-6">Return</p>
                     </div>
