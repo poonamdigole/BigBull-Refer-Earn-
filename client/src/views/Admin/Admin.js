@@ -32,7 +32,9 @@ function Admin() {
   const [cmpbal,setCmpbal] = useState();
   useEffect(() => {
     const getUserData = async () => {
-      const reqData = await fetch("http://localhost/bigbull/api/admin.php");
+      const storedData = localStorage.getItem('user');
+      const formData=JSON.parse(storedData)[1]
+      const reqData = await fetch("http://localhost/bigbull/api/admin.php/"+formData);
       const resData = await reqData.json();
       setAdmin(resData[0].username);
       setCmpbal(resData[0].cmp);

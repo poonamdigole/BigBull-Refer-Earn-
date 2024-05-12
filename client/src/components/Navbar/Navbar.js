@@ -35,9 +35,7 @@ function Navbar() {
             <TfiFacebook className="text-white p-1 fs-2 rounded-1 shadow-lg-hover m-auto " />{" "}
           </a>
         </div>
-        <div className=" align-content-center ">
-          <p className="mb-0 fs-6 me-3 address ">+0123456789 | admin@gmail.com</p>
-        </div>
+  
       </div>
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary p-0  w-full">

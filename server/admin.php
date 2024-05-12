@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header("Access-Control-Allow-Origin:*");
@@ -13,6 +14,8 @@ if ($db_conn === false) {
 
 }
 
+
+
 $method = $_SERVER['REQUEST_METHOD'];
 
 //echo "test".$method; die;
@@ -22,23 +25,24 @@ switch ($method) {
 
   case "GET":
  
-  //   $getuserrow= mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='$userid'");
-  //  // print_r($getuserrow);
-  //   while($row= mysqli_fetch_array($getuserrow))
-  //   {
-  //    $json_array['rowUserdata']= array('user_id'=>$row['user_id'], 'username' => $row['username'],'plan'=>$row['plan'], 'balance' => $row['balance'], 'profit' => $row['profit'], 'date' => $row['date'], 'reffer'=> $row['refferal']);
-  //   }
-  //   echo json_encode($json_array['rowUserdata']);
-  //   return;
     $cmpbal=mysqli_query($db_conn, "SELECT balance,profit FROM users ");
     if (mysqli_num_rows($cmpbal) > 0) {
       $bal=0;
       while ($evr = mysqli_fetch_array($cmpbal)) {
-      $bal=$bal+ $evr['balance']-2*$evr['profit'];
+      $bal=$bal+ (($evr['balance']-$evr['profit'])*65)/100;
       }
     }
   //    echo $bal;
-    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='663b89770aa60'");
+  $path= explode('/', $_SERVER['REQUEST_URI']);
+  //print_r($path);
+  if(isset($path[4]))
+  {
+    $path= explode('/', $_SERVER['REQUEST_URI']);
+   // print_r($path);
+  $json_array= array();
+  }
+  $userid= $path[4];
+    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='$userid'");
     
   
     if (mysqli_num_rows($alluser) > 0) {

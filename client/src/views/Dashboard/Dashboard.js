@@ -8,9 +8,9 @@ import { FaUserShield } from "react-icons/fa";
 import Button from 'react-bootstrap/Button';
 import { FaCopy } from "react-icons/fa6";
 import Toast from 'react-bootstrap/Toast';
-import Deposite from "../Home/Deposite";
 import { HiUserGroup } from "react-icons/hi2";
 import { MdAccountBalanceWallet } from "react-icons/md";
+import axios from 'axios';
 
 function Dashboard() {
     const [data,setData]=useState([]);
@@ -20,26 +20,41 @@ function Dashboard() {
     const [balance, setBalance] = useState('');
     const [profit,setProfit] = useState('');
     const [reffer,setReffer] = useState('');
+    const [info, setInfo] = useState();
     useEffect(()=>{
+    
+     
       const getUserData=async()=>{
-        const reqData=await fetch("http://localhost/bigbull/api/user.php");
-        const resData=await reqData.json(); 
-      //  console.log(resData[0].user_id)       
+        const storedData = localStorage.getItem('user');
+        if (storedData) {
+      setInfo(JSON.parse(storedData));
+        }
+        const formData=JSON.parse(storedData)[1]
+        const res = await fetch("http://localhost/bigbull/api/client.php/" + formData);
+        const resData = await res.json();
+        if(resData){ 
+          // setMessage(res.success);
         setUrl(resData[0].user_id);
         setUser(resData[0].username);
         setBalance(resData[0].balance);
         setProfit(resData[0].profit);
         setReffer(resData.length-1);
         setData(resData);
+         
+        }
+    
+
+      //  console.log(resData)       
+     
       }
       getUserData();
     },[])
-
+    // console.log(info[1]);
      console.log(data)
     return (
  <div>
 <div>
-<nav className="navbar navbar-expand-lg bg-body-tertiary p-0  w-full">
+<nav className="navbar navbar-expand-lg bg-body-tertiary p-0 w-full">
         <img
           src={logo}
           alt=""
@@ -90,18 +105,6 @@ function Dashboard() {
             <Col>
             <p>
                 User ID:<h4 className="text-danger">{url}</h4>
-            </p>
-            </Col>
-           </Row>
-        </Col>
-        <Col xs lg="3" className="bg-dark  mx-1 p-4 rounded-3 ">
-           <Row className="g-2">
-            <Col variant="outline-danger" className=" col-3 align-content-center justify-items-center  mx-2 rounded-circle ">
-           <Button variant="outline-danger"> <MdAccountBalanceWallet className="fs-1"/>  </Button>
-            </Col>
-            <Col>
-            <p>
-            Main Balance:<h4 className="text-danger">{balance}</h4>
             </p>
             </Col>
            </Row>
@@ -178,10 +181,6 @@ function Dashboard() {
    
   </tbody>
 </table>
-</div>
-<div className="container">
-<h2 className="text-danger mx-5">History</h2>
-<Deposite/>
 </div>
 </div> 
     </div>

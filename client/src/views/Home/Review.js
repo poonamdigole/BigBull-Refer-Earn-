@@ -33,7 +33,6 @@ function Review() {
   return (
     <div className=" align-content-center container-fluid ">
       <h1
-        style={{ fontFamily: "brush script mt" }}
         className="mt-4 text-danger "
       >
         What Says Our Customers
