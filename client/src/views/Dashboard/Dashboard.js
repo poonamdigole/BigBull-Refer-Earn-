@@ -10,7 +10,6 @@ import { FaCopy } from "react-icons/fa6";
 import Toast from 'react-bootstrap/Toast';
 import { HiUserGroup } from "react-icons/hi2";
 import { MdAccountBalanceWallet } from "react-icons/md";
-import axios from 'axios';
 
 function Dashboard() {
     const [data,setData]=useState([]);
@@ -32,24 +31,27 @@ function Dashboard() {
         const formData=JSON.parse(storedData)[1]
         const res = await fetch("http://localhost/bigbull/api/client.php/" + formData);
         const resData = await res.json();
+        console.log(resData);
         if(resData){ 
-          // setMessage(res.success);
+        // setMessage(res.success);
         setUrl(resData[0].user_id);
         setUser(resData[0].username);
         setBalance(resData[0].balance);
         setProfit(resData[0].profit);
-        setReffer(resData.length-1);
+        if(resData[1].result){
+          setReffer(resData[1].result);
+        }else{
+          setReffer(resData.length-1);
+        }
+       
         setData(resData);
          
         }
-    
 
-      //  console.log(resData)       
-     
       }
       getUserData();
     },[])
-    // console.log(info[1]);
+
      console.log(data)
     return (
  <div>
@@ -129,7 +131,7 @@ function Dashboard() {
                   >
                     <Button variant="outline-danger">
                       {" "}
-                      <HiUserGroup className="fs-1" />{" "}
+                      <MdAccountBalanceWallet className="fs-1" />{" "}
                     </Button>
                   </Col>
                   <Col>
@@ -143,10 +145,10 @@ function Dashboard() {
       </Row>
 </Container>
       <div className="container mt-5">
-        <h2 className="text-danger mx-5">Referral URL</h2>
+        <h2 className="text-danger mx-5">Referral Id</h2>
       <div className="container w-100 p-5 align-items-center d-flex position-relative ">
         <input type="url" className="w-75 fs-4 mx-1 " value={url}></input>  
-         <Button variant="outline-danger" className="m-1" onClick={() => { navigator.clipboard.writeText(url); setShow(true) }}><FaCopy/></Button>
+         <Button variant="outline-danger" className="m-1" onClick={() => {navigator.clipboard.writeText(url); setShow(true) }}><FaCopy/></Button>
         <Toast className=" w-auto " onClose={() => setShow(false)} show={show} delay={3000} autohide>
           <Toast.Body>Link Copy</Toast.Body>
         </Toast>
@@ -183,7 +185,7 @@ function Dashboard() {
 </table>
 </div>
 </div> 
-    </div>
+</div>
   )
 }
 

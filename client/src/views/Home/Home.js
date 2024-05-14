@@ -154,15 +154,15 @@ function Home() {
             percentage accordingly: 25%, 10% and 5%.
           </p>
           <Row className="d-flex justify-content-lg-around text-light">
-            <Col className="d-flex justify-content-around">
+            <Col className="d-flex justify-content-center">
               <h2 className="bg-black p-1 rounded-3 text-danger">25%</h2>
               <p className="m-2">Level 01</p>{" "}
             </Col>
-            <Col className="d-flex justify-content-around">
+            <Col className="d-flex justify-content-center">
               <h2 className="bg-black p-1 rounded-3 text-danger">10%</h2>
               <p className="m-2">Level 02</p>{" "}
             </Col>
-            <Col className="d-flex justify-content-around ">
+            <Col className="d-flex justify-content-center ">
               <h2 className="bg-black p-1 rounded-3 text-danger">5%</h2>
               <p className=" m-2">Level 03</p>{" "}
             </Col>

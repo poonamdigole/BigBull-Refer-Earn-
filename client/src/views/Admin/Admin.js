@@ -93,24 +93,7 @@ function Admin() {
                   </Col>
                 </Row>
               </Col>
-              <Col xs lg="3" className="bg-dark  mx-1 p-4 rounded-3 ">
-                <Row className="g-2">
-                  <Col
-                    variant="outline-danger"
-                    className=" col-3 align-content-center justify-items-center  me-3 rounded-circle "
-                  >
-                    <Button variant="outline-danger">
-                      {" "}
-                      <MdAccountBalanceWallet className="fs-1" />{" "}
-                    </Button>
-                  </Col>
-                  <Col>
-                    <p>
-                      Main Balance:<h4 className="text-danger">{balance}₹</h4>
-                    </p>
-                  </Col>
-                </Row>
-              </Col>
+             
               <Col xs lg="3" className="bg-dark mx-1 p-4 rounded-3 ">
                 <Row>
                   <Col
@@ -145,7 +128,7 @@ function Admin() {
                   >
                     <Button variant="outline-danger">
                       {" "}
-                      <HiUserGroup className="fs-1" />{" "}
+                      <MdAccountBalanceWallet className="fs-1" />{" "}
                     </Button>
                   </Col>
                   <Col>

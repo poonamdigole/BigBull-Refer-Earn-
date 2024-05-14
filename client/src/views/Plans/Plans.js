@@ -13,8 +13,10 @@ import platinum from "./platinum.png";
 import diamond from "./diamond.png";
 import logo from "../logo.png";
 import "../../components/Navbar/Navbar.css";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 function Plans() {
+  const navigate = useNavigate(); 
   useEffect(() => {
     Aos.init();
   }, []);
@@ -27,7 +29,7 @@ function Plans() {
     plans: "",
     balance: "",
     reffer: "",
-    password: "",
+    password:"",
     profit: "00000"
   });
   const handleInput = (e) => {
@@ -36,17 +38,23 @@ function Plans() {
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
-      //console.log(formvalue);
+      console.log(formvalue);
       const formData={username:formvalue.username,email:formvalue.email,mobile:formvalue.mobile,address:formvalue.address,palns:formvalue.plans,balance:formvalue.balance,refferal:formvalue.reffer, password:formvalue.password,}
       const res = await axios.post("http://localhost/bigbull/api/plan.php",formData);
-      console.log(res);
-      if(res){
-        setMessage(res.success);
+      console.log(res.data.success);
+      if(res.data.success){
+        setMessage(res.data.message);
         setTimeout(()=>{
-        window.location.reload()
-        },500)
-       
+          navigate('/Login');
+          window.location.reload()
+        },1000)  
       }
+      // else{
+      //   setMessage(res.data.message);
+      //   setTimeout(()=>{
+      //     window.location.reload()
+      //   },1000)  
+      // }
     }
 
   return (

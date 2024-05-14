@@ -19,17 +19,15 @@ switch ("$method") {
 
     case "POST":
         $userpostdata = json_decode(file_get_contents("php://input"));
-       // print_r ($userpostdata->email);
+      //  print_r ($userpostdata->email);
         $email = $userpostdata->email;
-        $password = $userpostdata->password;
-
-    $user = mysqli_query($db_conn, "SELECT email,user_id,username FROM users WHERE email='$email' AND password =$password ");
+        $password = md5($userpostdata->password);
+ $user = mysqli_query($db_conn, "SELECT email,user_id,username FROM users WHERE email='$email' AND password ='$password'");
  if(mysqli_num_rows($user)>0){
     while($row=mysqli_fetch_array($user)){ 
        $client=$row['user_id'];
     //    $_SESSION['invester'] = $client;
-     
-       try {
+    try {
         echo json_encode([
             'success' => true,
             'data' => $row,
@@ -41,11 +39,8 @@ switch ("$method") {
             'message' => $e->getMessage()."Enter correct detils"
         ]);
     }
-  
-     
     }
-   // var_dump($_SESSION);
-    // print_r(  $_SESSION['invester']);
+   
 }else{
         echo json_encode([
             'success' => false,

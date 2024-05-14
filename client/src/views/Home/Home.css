@@ -20,4 +20,11 @@
 }
 .vedio{
     border-radius: 6%;
+ max-width: 500px;
+}
+
+@media only screen and (max-width:600px){
+    .vedio{
+        width:100%;
+    }
 }
