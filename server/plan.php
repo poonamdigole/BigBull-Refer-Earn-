@@ -38,22 +38,17 @@ switch ("$method") {
     $profit = '00000';
     $balance = $userpostdata->balance +$profit;
     $refferal = $userpostdata->refferal;
-    $password = $userpostdata->password;
-    $bonus = (25*($balance-$profit))/100;
-    $result1 = mysqli_query($db_conn,"INSERT INTO `users`(`user_id`,`username`, `mobile`, `email`, `address`, `plan`, `balance`, `profit`, `refferal`, `password`) VALUES('$user_id','$username', '$mobile', '$email','$address','$plan','$balance',$profit,'$refferal',' $password')");
-   
-    if ($result === false) {
+    $password = md5($userpostdata->password);
 
-      echo json_encode(['result'=>" Could Not Connect" ]);
-    
-    }
+
+    $bonus = (25*($balance-$profit))/100;
+    $result1 = mysqli_query($db_conn,"INSERT INTO `users`(`user_id`,`username`, `mobile`, `email`, `address`, `plan`, `balance`, `profit`, `refferal`, `password`) VALUES('$user_id','$username', '$mobile', '$email','$address','$plan','$balance',$profit,'$refferal','$password')");
     $result2 = mysqli_query($db_conn,"UPDATE `users` SET profit=profit+$bonus ,balance=balance+$bonus WHERE user_id='$refferal'" )or die();
    
 
   
 
   if ($result1) {
-    echo json_encode(["success" => "User Added Successfully"]);
     if($result2){
       $refferId=$refferal;
       $arr=[];
@@ -79,9 +74,20 @@ switch ("$method") {
           }
        }
     }
-  
+    try {
+      echo json_encode([
+          'success' => true,
+          'message' => "User Added Successfully"
+      ]);
+  } catch (Exception $e) {
+      echo json_encode([
+          'success' => false,
+          'message' => $e->getMessage()."Enter correct detils"
+      ]);
+  }
   } else {
-    echo json_encode(["success" => "Please Check the User Data!"]);
+    echo json_encode([    'success' => false,
+    'message' => $e->getMessage()."Enter correct detils"]);
   }
 
   break;
