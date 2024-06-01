@@ -24,12 +24,11 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
 
   case "GET":
- 
-    $cmpbal=mysqli_query($db_conn, "SELECT balance,profit FROM users ");
+    $cmpbal=mysqli_query($db_conn, "SELECT cmpprofit FROM compony");
     if (mysqli_num_rows($cmpbal) > 0) {
       $bal=0;
       while ($evr = mysqli_fetch_array($cmpbal)) {
-      $bal=$bal+ (($evr['balance']-$evr['profit'])*65)/100;
+      $bal=$bal+$evr['cmpprofit'];
       }
     }
   //    echo $bal;
@@ -42,7 +41,7 @@ switch ($method) {
   $json_array= array();
   }
   $userid= $path[4];
-    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='$userid'");
+    $alluser = mysqli_query($db_conn, "SELECT * FROM users WHERE user_id='664e1ba2ceec7'");
     
   
     if (mysqli_num_rows($alluser) > 0) {
@@ -50,7 +49,7 @@ switch ($method) {
         $json_array["userdata"][]= array("id" => $row['id'], "user_id"=>$row['user_id'], "username" => $row['username'], "balance" => $row['balance'], "profit" => $row['profit'], "date" => $row['date'], "reffer" => $row['refferal'] ,"cmp"=>$bal);
       }
    
-     $reffer =  mysqli_query($db_conn, "SELECT user_id,username,plan,balance,profit,refferal,date FROM users");
+     $reffer =  mysqli_query($db_conn, "SELECT user_id,username,plan,balance,profit,refferal,date FROM users WHERE user_id !='664e1ba2ceec7'");
       if (mysqli_num_rows($reffer) > 0) {
         $invite=[];
         while($row = mysqli_fetch_array($reffer)) {

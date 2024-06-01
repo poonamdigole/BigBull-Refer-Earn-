@@ -107,15 +107,15 @@ function Admin() {
                   </Col>
                   <Col>
                     <p>
-                      Total Reffer:{" "}
-                      {
-                        //Check if message failed
-                        result == undefined ? (
-                          <h4 className="text-danger">{reffer}</h4>
-                        ) : (
-                          <h4 className="text-danger">{result}</h4>
-                        )
-                      }
+                        Total Reffer:{" "}
+                        {
+                          //Check if message failed
+                          result == undefined ? (
+                            <h4 className="text-danger">{reffer}</h4>
+                          ) : (
+                            <h4 className="text-danger">{result}</h4>
+                          )
+                        }
                     </p>
                   </Col>
                 </Row>

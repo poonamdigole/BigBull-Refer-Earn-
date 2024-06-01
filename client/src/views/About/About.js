@@ -1,5 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import { HiUserGroup } from "react-icons/hi2";
+import { MdAccountBalanceWallet } from "react-icons/md";
+import { GiWallet } from "react-icons/gi";
 const MainCard = () => {
   return (
     <div className="bg-dark text-white py-5">
@@ -7,7 +10,7 @@ const MainCard = () => {
         <div className="row">
           <div className="col-md-6 d-flex align-items-center">
             <img
-              src="./main.img"
+              src="https://img.freepik.com/free-vector/programmer-concept-illustration_114360-2417.jpg?t=st=1715757660~exp=1715761260~hmac=e9edba0fca9730f07f80a132ea28cb3f3527a7ed4fedf5ff55a666e16d3b46c5&w=740"
               className="img-fluid rounded-circle border border-danger"
               alt="..."
               height="150px"
@@ -35,11 +38,11 @@ const MainCard = () => {
               a year.
             </p>
             <div className="d-flex justify-content-between align-items-center mt-3">
-              <img src="./user.png" alt="" className="rounded-circle hover-opacity-50" style={{ width: "40px", height: "40px" }} />
+              <HiUserGroup className="rounded-circle hover-opacity-50" style={{ width: "40px", height: "40px" }} />
               <h6 className="text-light mx-2">58k <br /> Happy users</h6>
-              <img src="./cases_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="" className="rounded-circle hover-opacity-50" style={{ width: "40px", height: "40px" }} />
+              <MdAccountBalanceWallet className="rounded-circle hover-opacity-50" style={{ width: "40px", height: "40px" }} />
               <h6 className="text-light mx-2">30+ <br /> Total Wallet</h6>
-              <img src="./payments_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="" className="rounded-circle hover-opacity-50" style={{ width: "40px", height: "40px" }} />
+              <GiWallet className="rounded-circle hover-opacity-50" style={{ width: "40px", height: "40px" }} />
               <h6 className="text-light mx-2">235m <br /> Deposit</h6>
             </div>
           </div>

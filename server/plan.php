@@ -14,7 +14,13 @@ if ($db_conn === false) {
   die("ERROR: Could Not Connect" . mysqli_connect_error());
 
 }
+require('vendor/autoload.php');
+use Razorpay\Api\Api;
 
+$api_key = 'rzp_test_yWMvyDcDnYXnV6';
+$api_secret = 'KJ6GvUpZwxLX4N71xHgMgIPs';
+
+$api = new Api($api_key, $api_secret);
 //var_dump($_SESSION); // Output the session data to see what's inside
 
  $method = $_SERVER['REQUEST_METHOD'];
@@ -33,18 +39,29 @@ switch ("$method") {
     $username = $userpostdata->username;
     $email = $userpostdata->email;
     $mobile = $userpostdata->mobile;
-    $address = $userpostdata->address;
     $plan = $userpostdata->palns;
     $profit = '00000';
-    $balance = $userpostdata->balance +$profit;
+    $balance = $userpostdata->balance;
     $refferal = $userpostdata->refferal;
     $password = md5($userpostdata->password);
+    $order_id = $userpostdata->razorpay_order_id;
+    $payment_id = $userpostdata->razorpay_payment_id;
+    $signature = $userpostdata->razorpay_signature;
 
 
-    $bonus = (25*($balance-$profit))/100;
-    $result1 = mysqli_query($db_conn,"INSERT INTO `users`(`user_id`,`username`, `mobile`, `email`, `address`, `plan`, `balance`, `profit`, `refferal`, `password`) VALUES('$user_id','$username', '$mobile', '$email','$address','$plan','$balance',$profit,'$refferal','$password')");
+    $generated_signature = hash_hmac('sha256', $order_id . "|" . $payment_id, $api_secret);
+
+if ($generated_signature === $signature) {
+
+    $bonus = (25*($balance))/100;
+    $result1 = mysqli_query($db_conn,"INSERT INTO `users`(`user_id`,`username`, `mobile`, `email`, `plan`, `balance`, `profit`, `refferal`, `password`,`payment`) VALUES('$user_id','$username', '$mobile', '$email','$plan','$balance',$profit,'$refferal','$password','$payment_id')");
     $result2 = mysqli_query($db_conn,"UPDATE `users` SET profit=profit+$bonus ,balance=balance+$bonus WHERE user_id='$refferal'" )or die();
-   
+    if( $refferal==""){
+      $result3 = mysqli_query($db_conn,"INSERT INTO `compony`(`user_id`,`invest`, `cmpprofit`) VALUES('$user_id','$balance','$balance')")or die();
+     }else{
+      $result3 = mysqli_query($db_conn,"INSERT INTO `compony`(`user_id`,`invest`, `cmpprofit`) VALUES('$user_id','$balance',(65*($balance))/100)")or die();
+    
+     }
 
   
 
@@ -87,8 +104,15 @@ switch ("$method") {
   }
   } else {
     echo json_encode([    'success' => false,
-    'message' => $e->getMessage()."Enter correct detils"]);
+    'message' => $e->getMessage()."signup failed"]);
   }
+} else {
+  // Payment verification failed
+  echo json_encode([
+      'success' => false,
+      'message' => "Payment verification failed"
+  ]);
+}
 
   break;
     default: ;

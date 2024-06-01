@@ -52,7 +52,7 @@ function Dashboard() {
       getUserData();
     },[])
 
-     console.log(data)
+   //  console.log(data)
     return (
  <div>
 <div>

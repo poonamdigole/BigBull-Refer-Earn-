@@ -38,6 +38,7 @@ case "GET":
   
   if (mysqli_num_rows($alluser) > 0) {
     while ($row = mysqli_fetch_array($alluser)) {
+
       $json_array["userdata"][]= array("id" => $row['id'], "user_id"=>$row['user_id'], "username" => $row['username'], "balance" => $row['balance'], "profit" => $row['profit'], "date" => $row['date'], "reffer" => $row['refferal']);
     }
 $info=$json_array["userdata"];

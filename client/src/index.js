@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import './index.css';
-import SignUp from './views/SignUp/SignUp';
+//import SignUp from './views/SignUp/SignUp';
 import Login from './views/Login/Login'
 import Plans from './views/Plans/Plans'
 import Contact from './views/Contact/Contact';
@@ -11,6 +11,9 @@ import About from './views/About/About'
 import reportWebVitals from './reportWebVitals';
 import Dashboard from './views/Dashboard/Dashboard';
 import Admin from './views/Admin/Admin';
+import TermsAndConditions from './views/Privacy/Tercondi';
+import PrivacyPolicy from './views/Privacy/Privacy';
+//import Contact from './views/Contact/Contact'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -39,16 +42,19 @@ const router = createBrowserRouter(
     element: <Dashboard />
   },
   {
-    path: '/signup',
-    element: <SignUp />
-  },
-  {
     path:"/contact",
     element:<Contact/>
   },
   {
     path:"/admin",
     element:<Admin/>
+  },
+  {
+    path:"/terms&conditions",
+    element:<TermsAndConditions/>
+  }, {
+    path:"/privacy",
+    element:<PrivacyPolicy/>
   }
 ])
 
