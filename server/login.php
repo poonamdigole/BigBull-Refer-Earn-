@@ -22,7 +22,7 @@ switch ("$method") {
       //  print_r ($userpostdata->email);
         $email = $userpostdata->email;
         $password = md5($userpostdata->password);
- $user = mysqli_query($db_conn, "SELECT email,user_id,username FROM users WHERE email='$email' AND password ='$password'");
+ $user = mysqli_query($db_conn, "SELECT email,user_id,username,role FROM users WHERE email='$email' AND password ='$password'");
  if(mysqli_num_rows($user)>0){
     while($row=mysqli_fetch_array($user)){ 
        $client=$row['user_id'];

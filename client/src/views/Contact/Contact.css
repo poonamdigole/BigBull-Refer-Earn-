@@ -14,8 +14,7 @@ body {
  
   
   .z{
-    margin-top: 88px;
-    margin-left: 80px;
+    margin-top: 8rem;
     text-decoration: none ;
   
   }
@@ -34,7 +33,7 @@ body {
     margin-top: 5px;
     margin-bottom: 20px;
     color: #fff;
-    font-size: 50px;
+    font-size: 20px;
   }
   .card-header{
     text-align: center;
@@ -43,9 +42,7 @@ body {
   }
   .card{
   display: flex;
-  margin-left: 90px;
-  margin-top: 15px;
-  margin-bottom: 25px;
+
   padding: 10px;
   
   }
@@ -85,13 +82,9 @@ body {
       color: #fff;
     }
     .form{
-      width: 70%;
-      height: 550px;
-      /* text-align: center; */
-      margin: 30px auto;
-      /* margin-left: 480px; */
+      margin: 20px 10px;
       border: #fff;
-     
+     margin-bottom: 10px;
     }
     .form:hover{
    
@@ -210,3 +203,61 @@ body {
       font-size: 13px;
       margin-bottom: 0;
     }
+
+
+
+    .contain {
+      text-align: center;
+      padding: 50px 0;
+      margin-top: 90px;
+    }
+    
+    .ws-1 {
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+    }
+    
+    .text-danger-emphasis {
+      border-top: 1px solid #dc3545;
+    }
+    .form {
+      background-color: #000;
+      padding: 40px;
+      border-radius: 8px;
+    }
+    
+    .form label {
+      color: #fff;
+    }
+    
+    .form input,
+    .form textarea {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #444;
+    }
+    
+    .form .btn-danger {
+      background-color: #dc3545;
+      border: none;
+    }
+    
+    .form .btn-danger:hover {
+      background-color: #c82333;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+.embed{
+  width: 65%;
+  height: 392px;
+  margin: 0px;
+}
+@media (max-width:800px) {
+  .embed{
+    width: 100%;
+    height: 392px;
+  }
+
+}

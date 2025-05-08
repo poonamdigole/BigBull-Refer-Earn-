@@ -1,0 +1,21 @@
+
+.terms-container {
+    margin-top: 20px;
+    padding: 20px;
+    /* background-color: #ffffff; */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+h2{
+    color: rgb(255, 0, 0);  
+}
+
+h4{
+    color:rgb(182, 31, 31)
+}
+
+p{
+    font-size: smaller;
+}
+

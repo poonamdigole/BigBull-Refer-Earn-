@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Navbar/Navbar.css";
-import logo from "../../views/SignUp/logo.png";
+import logo from "./logo.png";
 import { FaInstagram, FaTelegram } from "react-icons/fa";
 import { TfiFacebook } from "react-icons/tfi";
 
@@ -51,6 +51,7 @@ function Navbar() {
               <a class="nav-link text-white mx-3 fs-5" href="/plans">Plans</a>
               {user && user.isAdmin && <a class="nav-link text-white mx-3 fs-5" href="/admin">Admin</a>}
               <a class="nav-link text-white mx-3 fs-5" href="/Login">DashBoard</a>
+              <a class="nav-link text-white mx-3 fs-5" href="/contact">Contact</a>
             </div>
           </div>
         </div>
